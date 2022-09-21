@@ -1,11 +1,30 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import { BsStarFill } from "react-icons/bs";
+import styled from 'styled-components';
 const Plan = () => {
   return (
     <MainBox>
            <TopBox>
             <Text> WTF: The Fitness Point Gym </Text>
-            <Button>111 Ratings</Button>
+            <Button>
+                <Star> 
+            <StarImg>
+                    <BsStarFill />
+                  </StarImg>
+                  <StarImg>
+                    <BsStarFill />
+                  </StarImg>
+                  <StarImg>
+                    <BsStarFill />
+                  </StarImg>
+                  <StarImg>
+                    <BsStarFill />
+                  </StarImg>
+                  <StarImg>
+                    <BsStarFill />
+                  </StarImg>
+                </Star>
+                 111 Ratings</Button>
            </TopBox>
            <p>Sector 53, Noida</p>
            <Description>
@@ -89,7 +108,9 @@ const Plan = () => {
                    <P1> FPG(2 Months)</P1>
                    <ChooseBtn> ₹ 2799</ChooseBtn>
                     </ChooseDiv>
-                    <p></p>
+                    <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                    </p>
                      </RightSmall5>
 
 
@@ -99,7 +120,7 @@ const Plan = () => {
                    <P2> FPG(12 Months)</P2>
                    <ChooseBtn> ₹ 11999</ChooseBtn>
                     </ChooseDiv>
-                    <p></p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
                      </RightSmall2>
 
                      <RightSmall7 >
@@ -108,6 +129,7 @@ const Plan = () => {
                    <P3> FPG (6 Months)</P3>
                    <ChooseBtn> ₹ 6999</ChooseBtn>
                     </ChooseDiv>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
                      </RightSmall7>
 
                      <RightSmall8 >
@@ -116,6 +138,7 @@ const Plan = () => {
                    <P4>FPG (3 Months)</P4>
                    <ChooseBtn> ₹ 3999</ChooseBtn>
                     </ChooseDiv>
+                    <P>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</P>
                      </RightSmall8>
 
               </RightBox>
@@ -223,6 +246,7 @@ const ChooseBtn=styled.button`
      border-radius:5px;
      text-align:center;
      padding:7px 15px;
+     cursor:pointer;
 
 `;
 
@@ -231,7 +255,7 @@ const ChooseBtn=styled.button`
 
 const Button=styled.button`
     width:150px;
-    height:50px;
+    height:70px;
     background :rgb(146,9,9);
     color:white;
     font-size:larger
@@ -328,7 +352,7 @@ const RightSmall1=styled.div`
   margin:10px auto;
   background:rgb(97,152,112);
   border-radius:10px; 
-  
+  padding:6px;
  
 `;
 
@@ -337,7 +361,7 @@ const RightSmall2=styled.div`
   margin:10px auto;
   background:rgb(144,86,116);
   border-radius:10px; 
-  
+  padding:6px;
  
 `;
 
@@ -346,7 +370,7 @@ const RightSmall3=styled.div`
   margin:10px auto;
   background:rgb(174,65,64);
   border-radius:10px; 
-  
+  padding:6px;
  
 `;
 
@@ -355,16 +379,17 @@ const RightSmall4=styled.div`
   margin:10px auto;
   background:rgb(63,120,165);
   border-radius:10px; 
-  
+  padding:6px;
  
 `;
 
 const RightSmall5=styled.div`
   width:95%;
-  margin:10px auto;
+  margin:20px auto;
+  padding:6px;
   background:rgb(97,152,112);
   border-radius:10px; 
-  
+  padding:6px;
  
 `;
 
@@ -373,7 +398,7 @@ const RightSmall6=styled.div`
   margin:10px auto;
   background:rgb(63,120,165);
   border-radius:10px; 
-  
+  padding:6px;
  
 `;
 
@@ -382,7 +407,7 @@ const RightSmall7=styled.div`
   margin:10px auto;
   background:rgb(169,69,67);
   border-radius:10px; 
-  
+  padding:6px;
  
 `;
 
@@ -391,6 +416,16 @@ const RightSmall8=styled.div`
   margin:10px auto;
   background:#66a4d0;
   border-radius:10px; 
-  
+  padding:6px;
  
+`;
+
+
+const Star = styled.div`
+  display: flex;
+  margin-top: 1px;
+`;
+
+const StarImg = styled.div`
+  margin: 3px;
 `;
