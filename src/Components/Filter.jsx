@@ -125,16 +125,19 @@ const P = styled.p`
   padding-left: 10px;
   color: rgb(112, 112, 112);
   font-size: larger;
+  border-bottom:1px solid rgb(112, 112, 112);
 `;
 
 const Location = styled.div`
   border: 2px solid rgb(112, 112, 112);
   background-color: rgb(46, 46, 46);
   width: 269px;
+  height:235px ;
   cursor: pointer;
   margin: 10px;
   border-radius: 4px;
   z-index: 99999999999;
+  overflow: hidden;
 
   @media only screen and (max-width: 768px) {
   }

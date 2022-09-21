@@ -10,6 +10,8 @@ import Poster from './Components/Poster';
 import Gyms from './Pages/Gyms';
 import loaders from './Assests/loader.gif'
 import { useEffect, useState } from 'react';
+import { Route, Routes } from 'react-router';
+import Plan from './Pages/Plan';
 
 function App() {
  let [loader,setLoader]=useState(false);
@@ -30,7 +32,7 @@ function App() {
       :
 
     <div className="App">
-      <NavBar/>
+      {/* <NavBar/>
       <Poster/>
      <Gyms/>
         <ShowBox>
@@ -38,7 +40,9 @@ function App() {
       <DataShow/>   
        </ShowBox>
        <Experience/>
-       <Footer/>
+       <Footer/> */}
+       <Plan/>
+    
     </div>
     }
     </>

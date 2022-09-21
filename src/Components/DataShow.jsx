@@ -5,10 +5,17 @@ import { BsStarFill } from "react-icons/bs";
 import { FaLocationArrow } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { FetchData } from "../Redux/Search/action";
+import { useNavigate } from "react-router";
 const DataShow = () => {
   const dispatch = useDispatch();
+  const navigate=useNavigate()
   const gym = useSelector((store) => store.gym.gymData);
   // console.log(gym,"gym")
+
+  const handelDetails=(e)=>{
+    console.log(e);
+  
+  }
 
   useEffect(() => {
     dispatch(FetchData());
@@ -67,7 +74,7 @@ const DataShow = () => {
                     {e.plan_duration} {e.plan_name} {e.plan_price}
                   </Rupee>
 
-                  <BookNow>BOOK</BookNow>
+                  <BookNow onClick={()=>handelDetails(e)}  >Book Now</BookNow>
                 </LowerBox>
               </GymData>
             </DataBox>
