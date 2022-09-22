@@ -32,7 +32,7 @@ function App() {
       :
 
     <div className="App">
-      <NavBar/>
+      {/* <NavBar/>
       <Poster/>
      <Gyms/>
         <ShowBox>
@@ -40,8 +40,8 @@ function App() {
       <DataShow/>   
        </ShowBox>
        <Experience/>
-       <Footer/> 
-       {/* <Plan/> */}
+       <Footer/>  */}
+       <Plan/> 
     
     </div>
     }

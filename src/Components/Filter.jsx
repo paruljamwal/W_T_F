@@ -17,7 +17,7 @@ const Filter = () => {
   .then((r)=>setCity(r.data)) 
     
   }
-console.log(city,"city");
+// console.log(city,"city");
   const handelCity = (e) => {
     findCity();
 
