@@ -22,32 +22,31 @@
    
    <h1>How to Run </h1> 
    
-   <h2> Clone this repository: </h2> 🔗 https://github.com/paruljamwal/Deck_Card_Game.git    <br>
+   <h2> Clone this repository: </h2> 🔗 https://github.com/paruljamwal/W_T_F.git    <br>
     step1. open cmdpromt or gitbash  <br>
     step2. clone the repo..  <br>
-    step3.   npm i  <br>
+    step3. npm i  <br>
     step4. npm start   <br>
      
    Runs the app in the development mode.  <br>
    Open http://localhost:3000 to view it in your browser.  <br>
 
- <h1> Demo </h1> 🔗  : https://exquisite-fox-df427b.netlify.app/    <br>
+ <h1> Demo </h1> 🔗  : https://lambent-babka-2c8fe1.netlify.app   <br>
  
  <h1> FEATURES </h1>   <br>
-   1. Shuffling random cards  <br>
-   2. have restart button  <br>
-   3. quit button  <br>
-   4. no repititon of card  <br>
-
+   1. Search gym by name <br>
+   2. Filter gym by near places <br>
+   3. Book gym near to you  <br>
+  
   <h1> WORKING.. </h1>
-    1. randomly suffle cards in set of five  <br>
-    2. by chossing any card it not comming again in the another set  <br>
-    3. we have one start button that helps you to restart you game in the initail stage  <br>
-    4. we have one quit button as well if you click on quit button the game will also start from initial stage again it creates deck of 5 sets.  <br>
+    1. Enter gym name inside search bar and get particular gym <br>
+    2. Select any gym near to your locality by select tag <br>
+    3. By clicking on Book Now button you can book specific gym  <br>
+    4. you can see all details by clicking own Book Now button <br>
  
  
  <h1> TECH STACK </h1>  <br>
   1. REACT  <br>
-  2. PURE CSS  <br>
+  2. Styled components <br>
 
 
