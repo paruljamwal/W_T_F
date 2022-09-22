@@ -47,5 +47,6 @@
  
  <h1> TECH STACK </h1>  <br>
   1. REACT  <br>
-  2. Styled components <br>
+  2. Redux <br>
+  3. Styled components <br>
 
