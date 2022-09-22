@@ -1,6 +1,5 @@
 import {
   FAILDATA,
-  GYM_DETAILS,
   LOADDATA,
   SHOWDATA,
 } from "./actionType";
@@ -26,12 +25,7 @@ const userLoad = () => {
   };
 };
 
-const getDetails = (payload) => {
-  return {
-    type: GYM_DETAILS,
-    payload,
-  };
-};
+
 
 export const FetchData = (payload) => (dispatch) => {
   dispatch(userLoad());

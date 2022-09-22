@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { BsSearch} from 'react-icons/bs';
 import {IoLocationSharp} from 'react-icons/io5';
 import { useDispatch, useSelector } from 'react-redux';
-import {  FetchData, getData, nearestGym } from '../Redux/Search/action';
+import {  FetchData, getData} from '../Redux/Search/action';
 
 const Gyms = () => {
   let [search,setSearch]=useState('')

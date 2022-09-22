@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { BsSearch } from "react-icons/bs";
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux/es/exports";
+import { useDispatch } from "react-redux/es/exports";
 import { FetchData, getData } from "../Redux/Search/action";
 
 const Filter = () => {
-  const gyms = useSelector((store) => store.gym.gymData);
   const [city, setCity] = useState([]);
   const dispatch = useDispatch();
   const [gym, setgym] = useState("");
@@ -14,35 +13,32 @@ const Filter = () => {
   const [loc, setLoc] = useState("");
 
   function findCity() {
-    const res = axios(`https://wtfgym.herokuapp.com/data`).then((r) =>
+    axios(`https://wtfgym.herokuapp.com/data`).then((r) =>
       setCity(r.data)
     );
   }
   // console.log(city,"city");
   const handelCity = (e) => {
-    findCity();
-    dispatch(FetchData());
     setgym(e.target.value);
+    findCity();
     nearest();
-    let da =
+   
       city &&
       city.filter((e) => {
-        if (e.city == gym) {
+        if (e.city === gym) {
           setNear(e.addressComponent);
           dispatch(getData(near));
         }
       });
 
-    // dispatch(getData(da));
+   
   };
 
   function nearest(gymy) {
-    if (gymy == "Noida") {
+    if (gymy === "Noida") {
       setLoc("noida");
     }
-    city.find((e) => console.log(e));
-    const nearLocation = axios(
-      `https://devapi.wtfup.me/gym/nearestgym?lat=30.325488815850512&amp&long=78.0042384802231&city=${loc}`
+    axios(`https://devapi.wtfup.me/gym/nearestgym?lat=30.325488815850512&amp&long=78.0042384802231&city=${loc}`
     ).then((r) => setNear(r.data.data));
   }
 
@@ -55,9 +51,10 @@ const Filter = () => {
     dispatch(getData([payload]));
   }
 
-  let d = city.map((e) => e.addressComponent);
 
-  useEffect(() => {}, [gym, dispatch]);
+  useEffect(() => {
+    dispatch(FetchData());
+  }, [gym, dispatch]);
 
   return (
     <FilterBox>

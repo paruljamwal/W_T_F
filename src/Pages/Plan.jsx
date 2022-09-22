@@ -3,12 +3,9 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { BsStarFill } from "react-icons/bs";
-import { useSelector } from "react-redux";
 import styled from "styled-components";
-import { getData } from "../Redux/Search/action";
 const Plan = () => {
   const [filterData, setFilterData] = useState([]);
-  const [benefits, setBenefits] = useState([]);
   const [terms, setTerms] = useState([]);
   const gymId = localStorage.getItem("gym_id");
   const fetchData = () => {
@@ -22,7 +19,7 @@ const Plan = () => {
   };
 
   let newData = filterData.filter((e) => {
-    if (e.user_id == gymId) {
+    if (e.user_id === gymId) {
       return e;
     }
   });
@@ -318,12 +315,6 @@ const Work = styled.div`
   margin: 20px auto;
 `;
 
-const workImg = styled.img`
-  width: 200px;
-  height: 50px;
-  border-radius: 10px;
-  margin-left: 10px;
-`;
 
 const ChooseBtn = styled.button`
   margin: 5px;
@@ -502,19 +493,6 @@ const RightSmall5 = styled.div`
   }
 `;
 
-const RightSmall6 = styled.div`
-  width: 95%;
-  margin: 10px auto;
-  background: rgb(63, 120, 165);
-  border-radius: 10px;
-  padding: 6px;
-
-  @media only screen and (max-width: 768px) {
-  }
-  @media only screen and (max-width: 425px) {
-    width: 90%;
-  }
-`;
 
 const RightSmall7 = styled.div`
   width: 95%;

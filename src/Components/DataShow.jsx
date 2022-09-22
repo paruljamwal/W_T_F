@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import styled from "styled-components";
 import "./DataShow.css";
 import { BsStarFill } from "react-icons/bs";
@@ -145,11 +145,7 @@ const GymData = styled.div`
     margin-left: 1px;
   }
 
-  &:hover {
-    transition: transform 1s, filter 1s ease-in;
-    filter: blur(2px);
-    transform: scale(1);
-  }
+  
 `;
 
 const GymName = styled.p`
