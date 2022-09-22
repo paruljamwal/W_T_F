@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { BsSearch } from "react-icons/bs";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux/es/exports";
-import { getData } from "../Redux/Search/action";
+import { FetchData, getData } from "../Redux/Search/action";
 
 const Filter = () => {
   const gyms = useSelector((store) => store.gym.gymData);
@@ -12,15 +12,16 @@ const Filter = () => {
   const [gym, setgym] = useState("");
   const [near, setNear] = useState([]);
   const [loc, setLoc] = useState("");
+
   function findCity() {
-    const res = axios(`https://wtfgym.herokuapp.com/data`)
-  .then((r)=>setCity(r.data)) 
-    
+    const res = axios(`https://wtfgym.herokuapp.com/data`).then((r) =>
+      setCity(r.data)
+    );
   }
-// console.log(city,"city");
+  // console.log(city,"city");
   const handelCity = (e) => {
     findCity();
-
+    dispatch(FetchData());
     setgym(e.target.value);
     nearest();
     let da =
@@ -31,7 +32,7 @@ const Filter = () => {
           dispatch(getData(near));
         }
       });
-         
+
     // dispatch(getData(da));
   };
 
@@ -39,7 +40,7 @@ const Filter = () => {
     if (gymy == "Noida") {
       setLoc("noida");
     }
-      city.find((e)=>console.log(e))
+    city.find((e) => console.log(e));
     const nearLocation = axios(
       `https://devapi.wtfup.me/gym/nearestgym?lat=30.325488815850512&amp&long=78.0042384802231&city=${loc}`
     ).then((r) => setNear(r.data.data));
@@ -88,7 +89,7 @@ const Filter = () => {
         <Location>
           {near &&
             near.map((e) => (
-              <P onClick={() => handelLocation(e)}>
+              <P key={e.id} onClick={() => handelLocation(e)}>
                 {e.address1} | {e.address2}
               </P>
             ))}
@@ -125,14 +126,14 @@ const P = styled.p`
   padding-left: 10px;
   color: rgb(112, 112, 112);
   font-size: larger;
-  border-bottom:1px solid rgb(112, 112, 112);
+  border-bottom: 1px solid rgb(112, 112, 112);
 `;
 
 const Location = styled.div`
   border: 2px solid rgb(112, 112, 112);
   background-color: rgb(46, 46, 46);
   width: 269px;
-  height:235px ;
+  height: 235px;
   cursor: pointer;
   margin: 10px;
   border-radius: 4px;

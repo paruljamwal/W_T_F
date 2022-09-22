@@ -1,18 +1,42 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import styled from 'styled-components'
 import { BsSearch} from 'react-icons/bs';
 import {IoLocationSharp} from 'react-icons/io5';
+import { useDispatch, useSelector } from 'react-redux';
+import {  FetchData, getData, nearestGym } from '../Redux/Search/action';
 
 const Gyms = () => {
+  let [search,setSearch]=useState('')
+  let dispatch=useDispatch();
+  let gymData=useSelector(store=>store.gym.gymData)
+
+ 
   const AutoFoucs=useRef(null);
+  
+  const handelSearch=(e)=>{
+     setSearch(e.target.value);
+
+    if(search.length ===  1 ){
+      dispatch(FetchData());
+    }
+     let gym= gymData?.filter((e)=>e.gym_name?.toLowerCase().indexOf(search) !== -1 ? true : false)
+     .map((e)=>e)
+     dispatch(getData(gym));
+   
+   }
+
+
+   const handelClear=()=>{
+    setSearch("")
+   }
 
   return (
     
     <InputBox>
         <Logo><BsSearch/></Logo>
-        <Input ref={AutoFoucs}  placeholder='Search gym name here...' />
+        <Input value={search} onChange={handelSearch} ref={AutoFoucs}  placeholder='Search gym name here...' />
         <Location><IoLocationSharp/></Location>
-        <Search>Clear</Search>
+        <Search onClick={handelClear} >Clear</Search>
     </InputBox>
 
 

@@ -14,6 +14,7 @@ const DataShow = () => {
 
   const handelDetails=(e)=>{
     dispatch(gymDetails(e.user_id))
+    navigate('/gym_details')
   }
 
   useEffect(() => {
@@ -66,8 +67,6 @@ const DataShow = () => {
                   </Arrow>{" "}
                   {e.distance_text} | {e.duration_text}
                 </P>
-                {/* <GymImg src={e.cover_image} alt={`gym img ${e.name} `} /> */}
-
                 <LowerBox>
                   <Rupee>
                     {e.plan_duration} {e.plan_name} {e.plan_price}

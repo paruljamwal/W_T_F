@@ -12,6 +12,7 @@ import loaders from './Assests/loader.gif'
 import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router';
 import Plan from './Pages/Plan';
+import Landing from './Pages/Landing';
 
 function App() {
  let [loader,setLoader]=useState(false);
@@ -32,17 +33,12 @@ function App() {
       :
 
     <div className="App">
-      {/* <NavBar/>
-      <Poster/>
-     <Gyms/>
-        <ShowBox>
-      <Filter/>
-      <DataShow/>   
-       </ShowBox>
-       <Experience/>
-       <Footer/>  */}
-       <Plan/> 
-    
+      <NavBar/>
+      <Routes>
+        <Route path="/" element={<Landing/>}  />
+        <Route path='/gym_details' element={<Plan/>} />
+      </Routes>
+
     </div>
     }
     </>
