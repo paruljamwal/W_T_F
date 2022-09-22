@@ -1,7 +1,7 @@
 # WTF
 
  <img src="https://media2.giphy.com/media/ceDopmZAdwGfJqmEW4/giphy.gif"/>
- <img src="https://i.gifer.com/Gnyg.gif" /> 
+
 
 # Getting Started with Create React App
 
@@ -49,4 +49,3 @@
   1. REACT  <br>
   2. Styled components <br>
 
- <img src="https://i.gifer.com/Gnyg.gif" />
