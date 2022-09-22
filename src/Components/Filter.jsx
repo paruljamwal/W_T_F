@@ -13,16 +13,16 @@ const Filter = () => {
   const [near, setNear] = useState([]);
   const [loc, setLoc] = useState("");
   function findCity() {
-    const res = axios(`https://api.wtfup.me/gym/places`).then((r) =>
-      setCity(r.data.data)
-    );
+    const res = axios(`https://wtfgym.herokuapp.com/data`)
+  .then((r)=>setCity(r.data)) 
+    
   }
-
+console.log(city,"city");
   const handelCity = (e) => {
     findCity();
 
     setgym(e.target.value);
-    // nearest(gym);
+    nearest();
     let da =
       city &&
       city.filter((e) => {
@@ -31,7 +31,7 @@ const Filter = () => {
           dispatch(getData(near));
         }
       });
-
+         
     // dispatch(getData(da));
   };
 
@@ -39,7 +39,7 @@ const Filter = () => {
     if (gymy == "Noida") {
       setLoc("noida");
     }
-
+      city.find((e)=>console.log(e))
     const nearLocation = axios(
       `https://devapi.wtfup.me/gym/nearestgym?lat=30.325488815850512&amp&long=78.0042384802231&city=${loc}`
     ).then((r) => setNear(r.data.data));

@@ -1,4 +1,4 @@
-import { FAILDATA, LOADDATA, SHOWDATA } from "./actionType"
+import { FAILDATA, GYM_DETAILS, LOADDATA, SHOWDATA } from "./actionType"
 import axios from 'axios';
 
  export const getData=(payload)=>{
@@ -26,6 +26,13 @@ const userLoad=()=>{
 }
 
 
+const getDetails=(payload)=>{
+    return{
+        type:GYM_DETAILS,
+        payload
+    }
+}
+
 
 export const FetchData=(payload)=>(dispatch)=>{
     dispatch(userLoad()); 
@@ -46,4 +53,19 @@ export const nearestGym=(payload)=>(dispatch)=>{
    .catch((e)=>dispatch(userfail(e)))
 }
 
+
+
+// GYM DETAILS....
+
+export const gymDetails=(gymId)=>(dispatch)=>{
+    const res=axios(`https://api.wtfup.me/gym/plan`,{
+        method:"POST",
+        headers:{
+            'content-type':"application/json"
+        },
+        data:{'gym_id':gymId}
+    })
+    .then((r)=>localStorage.setItem("gym_id",(gymId)))
+    
+}
 

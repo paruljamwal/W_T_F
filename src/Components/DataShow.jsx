@@ -4,7 +4,7 @@ import "./DataShow.css";
 import { BsStarFill } from "react-icons/bs";
 import { FaLocationArrow } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
-import { FetchData } from "../Redux/Search/action";
+import { FetchData, gymDetails } from "../Redux/Search/action";
 import { useNavigate } from "react-router";
 const DataShow = () => {
   const dispatch = useDispatch();
@@ -13,8 +13,7 @@ const DataShow = () => {
   // console.log(gym,"gym")
 
   const handelDetails=(e)=>{
-    console.log(e);
-  
+    dispatch(gymDetails(e.user_id))
   }
 
   useEffect(() => {
