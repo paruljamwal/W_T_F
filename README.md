@@ -2,7 +2,9 @@
 
 
 
- <img src="https://user-images.githubusercontent.com/96183163/189143468-1fbae639-0f01-40c4-99e2-01bd7f26c8b0.gif"/>
+ <img src="https://media2.giphy.com/media/ceDopmZAdwGfJqmEW4/giphy.gif"/>
+ 
+
 
 
 # Getting Started with Create React App
